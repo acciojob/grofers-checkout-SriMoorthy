@@ -12,10 +12,10 @@ const getSum = () => {
        return sumVal
   };
 
-  let table = document.getElementById('ans')
+ let table = document.getElementById('grocery')
   let tablerow = document.createElement('tr')
   let tablecell = document.createElement('td')
-  tablecell.setAttribute('colspan', '2')
+  tablecell.id = 'ans'
   tablecell.textContent = `Total Price ${getSum()}`
 
   tablerow.appendChild(tablecell)
