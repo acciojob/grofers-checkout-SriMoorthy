@@ -12,7 +12,7 @@ const getSum = () => {
        return sumVal
   };
 
-  let table = document.getElementById('grocery')
+  let table = document.getElementById('ans')
   let tablerow = document.createElement('tr')
   let tablecell = document.createElement('td')
   tablecell.setAttribute('colspan', '2')
