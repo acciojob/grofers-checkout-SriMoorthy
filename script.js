@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    calculateTotalPrice();
+    document.getElementById('calculateTotal').addEventListener('click', calculateTotalPrice);
 });
 
 function calculateTotalPrice() {
@@ -15,15 +15,20 @@ function calculateTotalPrice() {
 
 function addTotalRow(total) {
     const table = document.getElementById('groceryTable');
-    const totalRow = document.createElement('tr');
-    totalRow.classList.add('total-row');
+    let totalRow = document.querySelector('.total-row');
 
-    const totalCell = document.createElement('td');
-    totalCell.colSpan = 2;
-    totalCell.textContent = `Total Price: ${total}`;
+    if (!totalRow) {
+        totalRow = document.createElement('tr');
+        totalRow.classList.add('total-row');
+        const totalCell = document.createElement('td');
+        totalCell.colSpan = 2;
+        totalCell.id = "ans";
+        totalRow.appendChild(totalCell);
+        table.appendChild(totalRow);
+    }
 
-    totalRow.appendChild(totalCell);
-    table.appendChild(totalRow);
+    totalRow.cells[0].textContent = `Total Price: ${total}`;
 }
+
 
 
