@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function calculateTotalPrice() {
-    const prices = document.querySelectorAll('.prices');
+    const prices = document.querySelectorAll('.price');
     let total = 0;
 
     prices.forEach(price => {
@@ -20,7 +20,7 @@ function addTotalRow(total) {
 
     const totalCell = document.createElement('td');
     totalCell.colSpan = 2;
-    totalCell.textContent = `Total Price: $${total}`;
+    totalCell.textContent = `Total Price: ${total}`;
 
     totalRow.appendChild(totalCell);
     table.appendChild(totalRow);
